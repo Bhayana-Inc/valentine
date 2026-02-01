@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Will you be my Valentine?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="stage">
+    <section class="card" aria-live="polite">
+      <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+
+      <div class="icon" aria-hidden="true">
+        <!-- simple cat-with-heart svg -->
+        <svg viewBox="0 0 220 160" role="img">
+          <defs>
+            <linearGradient id="fur" x1="0" x2="1">
+              <stop offset="0" stop-color="#f0b06b"/>
+              <stop offset="1" stop-color="#e69a4c"/>
+            </linearGradient>
+          </defs>
+
+          <!-- ears -->
+          <path d="M70 55 L40 25 L50 70 Z" fill="url(#fur)"/>
+          <path d="M150 55 L180 25 L170 70 Z" fill="url(#fur)"/>
+
+          <!-- head -->
+          <circle cx="110" cy="85" r="60" fill="url(#fur)"/>
+
+          <!-- eyes -->
+          <circle cx="88" cy="85" r="7" fill="#121212"/>
+          <circle cx="132" cy="85" r="7" fill="#121212"/>
+
+          <!-- nose -->
+          <path d="M110 94 L100 108 L120 108 Z" fill="#ff6aa5"/>
+          <circle cx="110" cy="112" r="3" fill="#ff6aa5"/>
+
+          <!-- heart -->
+          <path d="M175 55
+                   C175 40, 195 36, 202 48
+                   C210 62, 194 75, 175 88
+                   C156 75, 140 62, 148 48
+                   C155 36, 175 40, 175 55 Z"
+                fill="#ff3d8d"/>
+        </svg>
+      </div>
+
+      <h1 id="question" class="title">will you be my valentine?</h1>
+
+      <div id="controls" class="controls">
+        <button id="yesBtn" class="btn btn-yes" type="button">Yes</button>
+
+        <!-- We keep "No" in a positioning box so it can "run away" inside the card -->
+        <div id="noZone" class="no-zone">
+          <button id="noBtn" class="btn btn-no" type="button">No</button>
+        </div>
+
+        <p class="hint">“No” seems a bit shy 😈</p>
+      </div>
+
+      <div id="yay" class="yay" hidden>
+        <div class="yayText">YAY! <span aria-hidden="true">🎉</span></div>
+        <img class="yayGif" src="assets/yay.gif" alt="Celebration" />
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
